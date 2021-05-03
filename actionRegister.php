@@ -26,8 +26,9 @@ if(isset($_POST["submit"])){
     else{
         $img_location=$img_folder.$img;
     }
-    $insert_query="INSERT INTO complaint (name,reg_no,email,room_no,block,type,detail,img_location,DOS) VALUES('$name','$regNO','$email','$roomNo','$block','$type','$detail','$img_location',NOW())";
+    $insert_query="INSERT INTO complaint (name,reg_no,email,room_no,block,type,detail,img_location,DOS,status) VALUES('$name','$regNO','$email','$roomNo','$block','$type','$detail','$img_location',NOW(),0)";
     if($conn->query($insert_query)===TRUE){
+        $conn->close();
         header("Location: successr.html");
     }
     else{
@@ -35,6 +36,7 @@ if(isset($_POST["submit"])){
     }
 }
 else{
+    $conn->close();
     header("Location: register.html");
 }
 ?>
