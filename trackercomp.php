@@ -29,7 +29,7 @@ if($result->num_rows>0){
         }
         else{
         $status=$row["status"];
-        echo "<td>resolved $status</td>";
+        echo "<td>resolved </td>";
         }
         echo "</tr>";
         $count++;
