@@ -1,3 +1,6 @@
+<?php
+require "sessionHCM.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,8 +24,9 @@
      </div>
      <div class="main">
         <div class="col-md-6 col-sm-12">
+           
            <div class="login-form">
-              <form>
+              <form action="actionLogin.php" method="POST"> 
                  <div class="form-group">
                     <label>User Name</label>
                     <input type="text" class="form-control" name="uname" placeholder="User Name">
@@ -31,8 +35,23 @@
                     <label>Password</label>
                     <input type="password" class="form-control" password="paswd" placeholder="Password">
                  </div>
-                 <input type="submit" class="btn btn-info" name="submit" value="Login">
+                 <input type="submit" class="btn btn-info mb-3" name="submit" value="Login">
               </form>
+              <?php
+            if(isset($_SESSION["messageu"])){
+                $messageu=$_SESSION["messageu"];
+                echo "<div class='alert alert-danger' role='alert'>
+                '$messageu'
+              </div>";
+              unset($_SESSION["messageu"]);
+            }
+            if(isset($_SESSION["messagep"])){
+                $messagep=$_SESSION["messagep"];
+                echo "<div class='alert alert-danger' role='alert'>
+                '$messagep'</div>";
+                unset($_SESSION["messagep"]);
+            }
+            ?>
            </div>
         </div>
      </div>
