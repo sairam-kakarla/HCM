@@ -1,5 +1,5 @@
 <?php
-require 'complaint_db.php';
+require 'HCM_db.php';
 if(isset($_POST["submit"])){
     $name=($_POST["FName"]);
     $email=($_POST["Email"]);

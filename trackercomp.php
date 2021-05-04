@@ -1,5 +1,5 @@
 <?php 
-require 'complaint_db.php';
+require 'HCM_db.php';
 $rengno=$_GET["regno"];
 $comp_query="SELECT type,detail,img_location,DOS,DOR,status FROM complaint WHERE reg_no ='$rengno'";
 $result=$conn->query($comp_query);
