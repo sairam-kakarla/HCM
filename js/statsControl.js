@@ -1,11 +1,3 @@
-// var xhttp=new XMLHttpRequest();
-// xhttp.onreadystatechange=function(){
-// if(this.readyState==4 && this.status==200){
-//     document.getElementById("compdis").innerHTML=this.responseText;
-//     }
-// };
-// xhttp.open("GET","actionStats.php",true);
-// xhttp.send();
 
 function calEff(res,reg){
     if(res==reg){
