@@ -5,7 +5,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 if($_POST["submit"]){
     $uname=filter_var($_POST["uname"],FILTER_SANITIZE_STRING);
     $paswd=filter_var($_POST["uname"],FILTER_SANITIZE_STRING);
-    $loginCheck="SELECT uname,password,fname FROM account WHERE uname='$uname'";
+    $loginCheck="SELECT uid,uname,password,fname,super_user FROM account WHERE uname='$uname'";
     $result=$conn->query($loginCheck);
     if($result){
         if($result->num_rows===0){
@@ -17,7 +17,12 @@ if($_POST["submit"]){
             if($paswd===$row["password"]){
                 //on login successfull
                 $_SESSION['login_user']=$uname;
-                header("Location: dashboard.html");
+                if($row["super_user"]==1){
+                header("Location: dashboard.php");}
+                else{
+                    $_SESSION["uid"]=$row["uid"];
+                    header("Location: dashboardE.php");
+                }
             }
             else{
                 //if password doesnt match;
