@@ -27,11 +27,11 @@ function reptGen(id){
     };
     xttp.open("POST","emp_report.php",true);
     xttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    var emp_id=document.getElementById(id).value;
+    var emp_report=document.getElementById(id).value;
     var query="id=";
     query=query.concat(id);
-    query=query.concat("&uid=");
-    query=query.concat(emp_id);
+    query=query.concat("&report=");
+    query=query.concat(emp_report);
     console.log(query);
     xttp.send(query);
 }

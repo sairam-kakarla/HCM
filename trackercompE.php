@@ -6,8 +6,8 @@ if(!isset($_SESSION["login_user"])){
 
 $comp_query="SELECT id,block,room_no,detail,img_location FROM complaint WHERE status=2 and uid=".$_SESSION["uid"]." ORDER BY DOS";
 $result=$conn->query($comp_query);
+echo "<h1>Report Complaint</h1>";
 if($result && $result->num_rows>0){
-    echo "<h1>Report Complaint</h1>";
     echo "<table class='table'>";
     echo "<tread>
     <tr>
@@ -36,8 +36,8 @@ if($result && $result->num_rows>0){
           else{
             echo "<td><p>No image Provided</p></td>";
         }
-        echo "<td><textarea id=".$row["id"]." name=".$row["id"]." rows='5' cols='40'></textarea><br>";
-        echo "<button type='button ' class='btn btn-success mt-4'>Report</button>";
+        echo "<td><textarea id=".$row["id"]." name=".$row["id"]." rows='5' cols='40'></textarea required><br>";
+        echo "<button type='button ' class='btn btn-success mt-4' onclick='javascript: reptGen(".$row["id"].")'>Report</button></td>";
         echo "</tr>";
         $count++;
         echo "</tbody>";

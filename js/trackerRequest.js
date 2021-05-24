@@ -9,6 +9,7 @@ function validateRegno(){
         return false
     }
 }
+
 function complaintRetrieve(){
     if(document.getElementById("regNo").value==""){
         alert("Enter Registration number");

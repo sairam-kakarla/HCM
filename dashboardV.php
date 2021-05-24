@@ -39,13 +39,13 @@ else{
                 <div class="left-sidebar">
                      <ul class="nav flex-column">
                          <li class="nav-item">
-                             <a id="mngComp" class="nav-link " href="#">Assign  Employee</a>
+                             <a class="nav-link " href="dashboard.php">Assign Employee</a>
                          </li>
                          <li class="nav-item">
-                             <a class="nav-link" href="dashboardV.php">Verify Complaints</a>
+                             <a id="vrfyComp" class="nav-link" href="#">Verify Complaints</a>
                          </li>
                          <li class="nav-item">
-                             <a class="nav-link" href="add_Emp.php">Register Users</a>
+                             <a class="nav-link" href="add_Emp.php">Add Employee</a>
                          </li>
                          <li class="nav-item">
                              <a class="nav-link" class="nav-link" href="remove_Emp.php">Remove Employee</a>
@@ -68,5 +68,5 @@ else{
    
     </div>
   </body>
-  <script src="js\admin_comp_list.js"></script>
+  <script src="js\admin_val_list.js"></script>
 </html>

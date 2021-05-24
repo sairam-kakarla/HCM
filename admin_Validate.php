@@ -3,8 +3,7 @@ require "sessionHCM.php";
 if(isset($_SESSION["login_user"])){
 if(!empty($_POST)){
     $id=$_POST["id"];
-    $report=$_POST["report"];
-    $update_query="UPDATE complaint SET status=3,report='".$report."' WHERE id=".$id;
+    $update_query="UPDATE complaint SET status=1,DOR=NOW() WHERE id=".$_POST["id"];
     $result=$conn->query($update_query);
     if($result===TRUE){
         echo "0";

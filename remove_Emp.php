@@ -39,19 +39,19 @@ else{
                 <div class="left-sidebar">
                      <ul class="nav flex-column">
                          <li class="nav-item">
-                             <a id="mngComp" class="nav-link " href="#">Assign  Employee</a>
+                             <a class="nav-link " href="dashboard.php">Assign Employee</a>
                          </li>
                          <li class="nav-item">
-                             <a class="nav-link" href="dashboardV.php">Verify Complaints</a>
+                             <a id="vrfyComp" class="nav-link" href="dashboardV.php">Verify Complaints</a>
                          </li>
                          <li class="nav-item">
-                             <a class="nav-link" href="add_Emp.php">Register Users</a>
+                             <a class="nav-link" class="nav-link" href="add_Emp.php">Add Employee</a>
                          </li>
                          <li class="nav-item">
-                             <a class="nav-link" class="nav-link" href="remove_Emp.php">Remove Employee</a>
+                             <a class="nav-link" class="nav-link" href="#">Remove Employee</a>
                          </li>
                          <li class="nav-item">
-                             <a class="nav-link " href="stats.html" >Stats</a>
+                             <a class="nav-link " class="nav-link" href="stats.html" >Stats</a>
                         </li>
                     </ul>
                 </div>
@@ -61,12 +61,33 @@ else{
     <!--Main Arena-->
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
         <div id="arena" class="content">
-            
+            <h1>Remove Complaint</h1>
+            <form method="POST" action="actionRemove.php">
+                <?php 
+                 if(isset($_SESSION["msgrs"])){
+                     echo "<div class='alert alert-success' role='alert'>"
+                     .$_SESSION['msgrs']."
+                   </div>";
+                   unset($_SESSION["msgrs"]);
+                 }
+                 elseif(isset($_SESSION["msgrf"])){
+                    echo "<div class='alert alert-danger' role='alert'>"
+                    .$_SESSION['msgrf']."
+                  </div>";
+                  unset($_SESSION["msgrf"]);
+                 }?>
+                 <div class="form-group">
+                      <label for="uname">Employee ID</label>
+                      <input type="text" class="form-control" name="uname" id="uname" aria-describedby="uhelp" placeholder="empXXXX" required>
+                      <small id="uhelp" class="form-text text-muted">If an employee is remove all his assigned work will be withdrawn.</small>
+                 </div>
+                 <button type="submit" class="btn btn-primary mt-3">Remove</button>
+                 </form>
         </div>
     </main>
     </div>
    
     </div>
   </body>
-  <script src="js\admin_comp_list.js"></script>
+  <script src="js\admin_emp_rem.js"></script>
 </html>

@@ -1,5 +1,5 @@
 function ValidateEmail() 
-{ const re=new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$")
+{ var re=new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$")
  if (re.test(document.getElementById("Email").value))
   {
     return (true)
@@ -10,7 +10,7 @@ function ValidateEmail()
 }
 
 function validateName(){
-    const re=new RegExp("^[A-Za-z\s]{1,}$")
+    const re=new RegExp("^[A-Za-z ]{1,}$")
     if(re.test(document.getElementById("Name").value)){
         return true
     }

@@ -37,4 +37,4 @@ if($_POST["submit"]){
         header("Location :login.php");
     }  
 }
-}
+} ?>
