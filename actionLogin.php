@@ -27,6 +27,7 @@ if($_POST["submit"]){
             else{
                 //if password doesnt match;
                 $_SESSION["messagep"]="Invalid Password";
+                header("Location: login.php");
             }    
         }
         
