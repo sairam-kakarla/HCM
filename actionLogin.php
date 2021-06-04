@@ -4,7 +4,7 @@ require "HCM_db.php";
 if($_SERVER["REQUEST_METHOD"]=="POST"){
 if($_POST["submit"]){
     $uname=filter_var($_POST["uname"],FILTER_SANITIZE_STRING);
-    $paswd=filter_var($_POST["uname"],FILTER_SANITIZE_STRING);
+    $paswd=filter_var($_POST["paswd"],FILTER_SANITIZE_STRING);
     $loginCheck="SELECT uid,uname,password,fname,super_user FROM account WHERE uname='$uname'";
     $result=$conn->query($loginCheck);
     if($result){
