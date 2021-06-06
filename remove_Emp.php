@@ -61,7 +61,7 @@ else{
     <!--Main Arena-->
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
         <div id="arena" class="content">
-            <h1>Remove Complaint</h1>
+            <h1>Remove Employee</h1>
             <form method="POST" action="actionRemove.php">
                 <?php 
                  if(isset($_SESSION["msgrs"])){
